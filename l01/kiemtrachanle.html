@@ -33,26 +33,24 @@
 		//hiên thị tất cả các giá trị của phần tử trong mảng kèm theo kiểm tra xem nó có phải là số hay ko
 		//hiển thị rõ các số là chẵn hay lẻ
 		//làm cách nào để hiển thị lên html , 1 dòng chứa toàn số chẵn, 1 dòng chứa toàn số lẻ
-		var soChan = "<h1>Danh sách số chắn: ";
-		var soLe = "<h1>Danh sách số lẻ: ";
+		var soLe = "<h1>Danh Sach So Le ";
+		var soChan = "<h1>Danh Sach So Chan ";
 		for(var i = 0; i < y.length; i++){
-			var element = y[i];
-			if(!isNaN(element) && element != null)
-			{
+			element = y[i];
+			if(!isNaN(element) && element != null){
 				if(element%2 == 1){
-					console.log(`element ở vị trị ${i} - ${element} là số lẻ`);
-					soLe += i + " - " + element + "  ";
+					console.log(`Phan tu thu ${i} - ${element} la so le`);
+					soLe += i + " - " + element + " ";
 				}else{
-					console.log(`element ở vị trí ${i} - ${element} là số chẵn`);
-					soChan += i + " - " + element + "  ";
+					console.log(`Phan tu thu ${i} - ${element} la so chan`);
+					soChan += i + " - " + element + " "; 
 				}
-			}
-			else{
-				console.log(`element ở vị trí ${i} - ${element} không phải là số`);
+			}else{
+				console.log(`Phan tu thu ${i} - ${element} khong phai la so`);
 			}
 		}
-		soChan += "</h1>";
 		soLe += "</h1>";
+		soChan += "</h1>";
 
 		document.write(soChan + soLe);
 	</script>

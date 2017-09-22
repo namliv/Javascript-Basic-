@@ -5,29 +5,56 @@
 </head>
 <body>
 	<script type="text/javascript">
-		var arr = [
-		1, 
-		2,
-		4,
-		5,
-		'something',
-		{name: 'phuongnam'},
-		9,
-		6
-		];
-		//hien thi cac so le trong mang
-		for(var i = 0; i < arr.length; i++){
-			var element = arr[i];
-			if(!isNaN(element)){
+		// var arr = [
+		// 1, 
+		// 2,
+		// 4,
+		// 5,
+		// 'something',
+		// {name: 'phuongnam'},
+		// 9,
+		// 6
+		// ];
+		// //hien thi cac so le trong mang
+		// for(var i = 0; i < arr.length; i++){
+		// 	var element = arr[i];
+		// 	if(!isNaN(element)){
+		// 		if(element%2 == 1){
+		// 			console.log(`Phan tu thu ${i} - ${arr[i]} la số lẻ`);
+		// 		}else{
+		// 			console.log(`Phan tu thu ${i} - ${arr[i]} la số chẵn`);
+		// 		}
+		// 	}else{
+		// 		console.log(`Phan tu thu ${i} - ${arr[i]} không phải là số`);
+		// 	}
+		// }
+		// 
+		var y = [10 , 20 , 4 , 5 , 3 , 2 ,1 , 'z' , 'x' , {} , null ];
+		//hiên thị tất cả các giá trị của phần tử trong mảng kèm theo kiểm tra xem nó có phải là số hay ko
+		//hiển thị rõ các số là chẵn hay lẻ
+		//làm cách nào để hiển thị lên html , 1 dòng chứa toàn số chẵn, 1 dòng chứa toàn số lẻ
+		var soChan = "<h1>Danh sách số chắn: ";
+		var soLe = "<h1>Danh sách số lẻ: ";
+		for(var i = 0; i < y.length; i++){
+			var element = y[i];
+			if(!isNaN(element) && element != null)
+			{
 				if(element%2 == 1){
-					console.log(`Phan tu thu ${i} - ${arr[i]} là số lẻ`);
+					console.log(`element ở vị trị ${i} - ${element} là số lẻ`);
+					soLe += i + " - " + element + "  ";
 				}else{
-					console.log(`Phan tu thu ${i} - ${arr[i]} la số chẵn`);
+					console.log(`element ở vị trí ${i} - ${element} là số chẵn`);
+					soChan += i + " - " + element + "  ";
 				}
-			}else{
-				console.log(`Phan tu thu ${i} - ${arr[i]} không phải là số`);
+			}
+			else{
+				console.log(`element ở vị trí ${i} - ${element} không phải là số`);
 			}
 		}
+		soChan += "</h1>";
+		soLe += "</h1>";
+
+		document.write(soChan + soLe);
 	</script>
 </body>
 </html>

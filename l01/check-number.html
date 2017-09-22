@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script type="text/javascript">
+		var x = prompt('Moi ban nhap so: ');
+
+		//kiem tra xem co phai la so khog
+		if(!isNaN(x)){
+			if(x%2 == 1){	
+                document.write(`Gia tri ${x} la so le`);
+			}else{
+				document.write(`Gia tri ${x} la so chan`);
+			}
+		}else{
+			document.write(`Gia tri ${x} khong phai la so`);
+		}
+	</script>
+</body>
+</html>

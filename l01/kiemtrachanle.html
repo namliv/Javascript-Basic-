@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = [
+		1, 
+		2,
+		4,
+		5,
+		'something',
+		{name: 'phuongnam'},
+		9,
+		6
+		];
+		//hien thi cac so le trong mang
+		for(var i = 0; i < arr.length; i++){
+			var element = arr[i];
+			if(!isNaN(element)){
+				if(element%2 == 1){
+					console.log(`Phan tu thu ${i} - ${arr[i]} là số lẻ`);
+				}else{
+					console.log(`Phan tu thu ${i} - ${arr[i]} la số chẵn`);
+				}
+			}else{
+				console.log(`Phan tu thu ${i} - ${arr[i]} không phải là số`);
+			}
+		}
+	</script>
+</body>
+</html>

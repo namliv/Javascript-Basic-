@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function checkOdd(num){
+			if(!isNaN(num) && num !== null){
+				if(num%2 == 1){
+         		return 1; //so le
+         	}else {
+         		return 2; // so chan
+         	}
+         }else{
+         	return false; //Khong phai so
+         }
+     }
+     
+     var text = prompt("Nhap Ky tu: ");
+    //hien thi ky tu chan hay le duoi dang console.log
+    //hien thi ky tu chan hay le duoi dang alert
+    //hien thi ky tu chan hay le duoi dang document.write
+    switch (checkOdd(text)) {
+    	case 1:
+	    	console.log('So le');
+	    	alert('So le');
+	    	document.write('So Le')
+    	break;
+    	case 2: 
+	    	console.log('So chan');
+	    	alert('so chan');
+	    	document.write('So chan');
+    	break;
+    	default:
+    	   document.write('Khong Phai La so');
+    	   break;
+    	}
+
+    </script>
+</body>
+</html>

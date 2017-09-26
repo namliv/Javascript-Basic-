@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery</title>
+	<style type="text/css" media="screen">
+	#playground{
+
+	}
+	td{
+		width: 40px;height: 40px;font-size: 20px;text-align: center;font-weight: bold;
+	}
+	.txt-red{color:red;}
+	.txt-green{color:green;}
+</style>
+</head>
+<body>
+
+	<div>
+		<select id="groundSize" onchange="start(this)">
+
+		</select>
+	</div>
+	<table id="playground" border="1">
+
+	</table>
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		var yardSize = 0;
+		$(document).ready(function(){
+			var options = ``;
+            // sinh ra cac phan tu trong the select
+            for (var i = 5; i < 25 ; i++) {
+            	options += `<option value="${i}">
+            	${i}x${i}
+            	</option>`;
+            }
+            //nhet noi dung vao the select dung append()
+            $('#groundSize').append(options);
+        });
+
+        //ham viet ran ngoai
+        function start(e){
+        	yardSize = e.value;
+        	var content = ``;
+        	for (var i = 0; i < yardSize; i++) {
+        		content += `<tr>`;
+        		for (var j = 0; j < yardSize; j++) {
+        			content += `<td onclick="check(this)"></td>`;
+        		}
+        		content += `</tr>`; 
+        	}
+
+        	$('table#playground').empty();
+        	$('table#playground').append(content);
+        }
+
+        var turn = "X";
+        function check(e){
+        	if($(e).text() == ""){
+        		$(e).text(turn);
+        	// turn = turn === "X" ? "0" : "X";	
+        	if(turn === "X"){
+        		$(e).addClass('txt-red');
+        		turn = "0";
+        	}else{
+        		$(e).addClass('txt-green');
+        		turn = "X";
+        	}
+        }
+    }
+</script>
+</body>
+</html>
